@@ -1,6 +1,6 @@
-@import url("./base/reset.css");
-@import url("./base/fonts.css");
-@import url("./ui/form.css");
+@import url("@/assets/styles/base/reset.css");
+@import url("@/assets/styles/base/fonts.css");
+@import url("@/assets/styles/ui/form.css");
 
 :root {
     --form-background: #FFFFFF;
