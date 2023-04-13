@@ -7,7 +7,9 @@
     "dev": "webpack serve --mode=development",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "lint": "eslint --ext .js src",
+    "lint:fix": "eslint --fix --ext .js src"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,8 @@
     "@babel/preset-env": "^7.21.4",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "eslint": "^8.38.0",
+    "eslint-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.21",

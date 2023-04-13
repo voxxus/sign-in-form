@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "ignorePatterns": ["node_modules", "dist"],
+    "rules": {
+        "arrow-parens": "error",
+        "block-spacing": "error",
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "never"
+        }],
+        "indent": ["error", 2],
+        "max-len": ["error", { "code": 120 }],
+        "no-multi-spaces": "error",
+        "no-multiple-empty-lines": ["error", { "max": 1 }],
+        "no-trailing-spaces": "error",
+        "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+        "semi": ["error", "always"],
+        "eqeqeq": ["error", "always"],
+        "no-console": "warn",
+        "eol-last": "error",
+        "prefer-const": "error"
+    }
+}
