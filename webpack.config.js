@@ -30,7 +30,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ title: 'Register & Login UI Kit', template: './src/index.html' }),
     new MiniCssExtractPlugin({ filename: 'css/main.css' }),
-    new ESLintWebpackPlugin(),
+    new ESLintWebpackPlugin({ emitWarning: false, emitError: false }),
   ],
 
   module: {

@@ -7,41 +7,46 @@ export function renderRegisterForm() {
 
         <div class="form__item-block">
             <label class="form__item">
-                <input 
-                    type="text" 
-                    class="form__item-input form__item-input--register" 
+                <input
+                    type="text"
+                    class="form__item-input form__item-input--register"
+                    name="fullName"
                     placeholder="Full Name"
                 >
             </label>
 
             <label class="form__item">
-                <input 
-                    type="email" 
-                    class="form__item-input form__item-input--register" 
+                <input
+                    type="email"
+                    class="form__item-input form__item-input--register"
+                    name="email"
                     placeholder="Email"
                 >
             </label>
 
             <label class="form__item">
-                <input 
-                    type="tel" 
-                    class="form__item-input form__item-input--register" 
+                <input
+                    type="tel"
+                    class="form__item-input form__item-input--register"
+                    name="phoneNumber"
                     placeholder="Phone"
                 >
             </label>
 
             <label class="form__item">
-                <input 
-                    type="password" 
-                    class="form__item-input form__item-input--register" 
+                <input
+                    type="password"
+                    class="form__item-input form__item-input--register"
+                    name="password"
                     placeholder="Password"
                 >
             </label>
 
             <label class="form__item">
-                <input 
-                    type="password" 
-                    class="form__item-input form__item-input--register" 
+                <input
+                    type="password"
+                    class="form__item-input form__item-input--register"
+                    name="passwordConfirm"
                     placeholder="Confirm Password"
                 >
             </label>
@@ -54,6 +59,7 @@ export function renderRegisterForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    submitForm();
   });
 
   form.querySelector('.form__button--sign-in').addEventListener('click', () => {
@@ -76,17 +82,19 @@ function renderLoginForm() {
 
         <div class="form__item-block">
             <label class="form__item">
-                <input 
-                    type="text" 
-                    class="form__item-input form__item-input--login" 
+                <input
+                    type="text"
+                    class="form__item-input form__item-input--login"
+                    name="username"
                     placeholder="Username"
                 >
             </label>
 
             <label class="form__item">
-                <input 
-                    type="password" 
-                    class="form__item-input form__item-input--login" 
+                <input
+                    type="password"
+                    class="form__item-input form__item-input--login"
+                    name="password"
                     placeholder="Password"
                 >
             </label>
@@ -98,7 +106,19 @@ function renderLoginForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    submitForm();
   });
 
   return form;
+}
+
+function submitForm() {
+  const inputs = document.querySelectorAll('.form__item-input');
+  const form = {};
+
+  inputs.forEach((input) => {
+    form[input.name] = input.value;
+  });
+
+  console.log(form);
 }
