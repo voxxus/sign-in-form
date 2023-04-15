@@ -1,128 +1,137 @@
 .form {
-    width: 400px;
+  width: 400px;
 
-    padding: 36px 24px 26px;
-    border-radius: 10px;
+  padding: 36px 24px 26px;
+  border-radius: 10px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-    background-color: var(--form-background);
+  background-color: var(--form-background);
 }
 
 .form--login {
-    min-height: 400px;
+  min-height: 400px;
 }
 
 .form--register {
-    min-height: 600px;
+  min-height: 600px;
 }
 
 .form__title {
-    font-size: 44px;
-    line-height: 53px;
-    font-weight: 700;
+  font-size: 44px;
+  line-height: 53px;
+  font-weight: 700;
 
-    color: var(--form-title);
+  color: var(--form-title);
 }
 
 .form__item-block {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
 .form__item {
-    width: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .form__item-input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid var(--input-border);
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--input-border);
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 18px;
-    color: var(--input-text);
-    background-color: var(--form-background);
-    
-    outline: none;
-    transition: 0.3s all ease;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--input-text);
+  background-color: var(--form-background);
+
+  outline: none;
+  transition: 0.3s all ease;
 }
 
 .form__item-input:focus {
-    border: 2px solid var(--input-border-focused);
+  border: 2px solid var(--input-border-focused);
 }
 
 .form__item-input::placeholder {
-    color: var(--input-text);
-    opacity: 0.7;
+  color: var(--input-text);
+  opacity: 0.7;
 }
 
 .form__item-input--register {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .form__item-input--login {
-    border-radius: 20px;
+  border-radius: 20px;
+}
+
+.form__item-error {
+  font-size: 14px;
+  color: var(--input-text-error);
 }
 
 .form__button-block {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .form__button-block--login {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .form__button {
-    width: 100%;
+  width: 100%;
 
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 18px;
-    color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #FFFFFF;
 
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s all ease;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s all ease;
 }
 
 .form__button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .form__button:focus {
-    background-color: var(--button-focused);
-    color: var(--button-text-focused);
+  background-color: var(--button-focused);
+  color: var(--button-text-focused);
 }
 
 .form__button--register {
-    background-color: var(--register-button);
+  background-color: var(--register-button);
 }
 
 .form__button--sign-in {
-    background-color: var(--sign-in-button);
+  background-color: var(--sign-in-button);
 }
 
 .form__button--login {
-    width: 45%;
+  width: 45%;
 
-    background-color: var(--login-button);
-    text-transform: uppercase;
+  background-color: var(--login-button);
+  text-transform: uppercase;
 }

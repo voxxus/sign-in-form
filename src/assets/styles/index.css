@@ -3,28 +3,29 @@
 @import url("@/assets/styles/ui/form.css");
 
 :root {
-    --form-background: #FFFFFF;
-    --form-title: #252EFF;
-    --input-border: #6066FF;
-    --input-border-focused: #000000;
-    --input-text: #000000;
-    --button-text-focused: #FFFFFF;
-    --button-focused: #000000;
-    --login-button: #252EFF;
-    --register-button: #8B54FF;
-    --sign-in-button: #6066FF;
+  --form-background: #FFFFFF;
+  --form-title: #252EFF;
+  --input-border: #6066FF;
+  --input-border-focused: #000000;
+  --input-text: #000000;
+  --input-text-error: #ff0000;
+  --button-text-focused: #FFFFFF;
+  --button-focused: #000000;
+  --login-button: #252EFF;
+  --register-button: #8B54FF;
+  --sign-in-button: #6066FF;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 #app {
-    height: 100vh;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
