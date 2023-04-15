@@ -39,10 +39,11 @@
 
 .form__item {
   width: 100%;
+  margin-bottom: 12px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .form__item-input {
@@ -77,8 +78,16 @@
   border-radius: 20px;
 }
 
+.form__item-input--error {
+  border: 2px solid var(--input-text-error);
+}
+
 .form__item-error {
-  font-size: 14px;
+  position: absolute;
+  bottom: -17px;
+  left: 10px;
+
+  font-size: 12px;
   color: var(--input-text-error);
 }
 

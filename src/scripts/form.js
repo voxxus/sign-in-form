@@ -1,3 +1,5 @@
+import { validateConfirmPassword, validateInputField } from './validation';
+
 export function renderRegisterForm() {
   const form = document.createElement('form');
   form.classList.add('form', 'form--register');
@@ -13,7 +15,7 @@ export function renderRegisterForm() {
           name="fullName"
           placeholder="Full Name"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
 
       <label class="form__item">
@@ -23,7 +25,7 @@ export function renderRegisterForm() {
           name="email"
           placeholder="Email"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
 
       <label class="form__item">
@@ -33,7 +35,7 @@ export function renderRegisterForm() {
           name="phoneNumber"
           placeholder="Phone"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
 
       <label class="form__item">
@@ -43,7 +45,7 @@ export function renderRegisterForm() {
           name="password"
           placeholder="Password"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
 
       <label class="form__item">
@@ -53,7 +55,7 @@ export function renderRegisterForm() {
           name="passwordConfirm"
           placeholder="Confirm Password"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
     </div>
 
@@ -64,7 +66,11 @@ export function renderRegisterForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    submitForm();
+    const { form, errors } = submitForm('register');
+
+    if (!errors.length) {
+      console.log(form);
+    }
   });
 
   form.querySelector('.form__button--sign-in').addEventListener('click', () => {
@@ -93,7 +99,7 @@ function renderLoginForm() {
           name="username"
           placeholder="Username"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
 
       <label class="form__item">
@@ -103,7 +109,7 @@ function renderLoginForm() {
           name="password"
           placeholder="Password"
         >
-        <div class="form__item-error">ss</div>
+        <div class="form__item-error"></div>
       </label>
     </div>
 
@@ -113,19 +119,57 @@ function renderLoginForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    submitForm();
+    const { form, errors } = submitForm('login');
+
+    if (!errors.length) {
+      console.log(form);
+    }
   });
 
   return form;
 }
 
-function submitForm() {
+function submitForm(formType) {
   const inputs = document.querySelectorAll('.form__item-input');
   const form = {};
+  const errors = [];
 
-  inputs.forEach((input) => {
+  for (const input of inputs) {
+    const { isValid, error } = validateInputField(input.value, input);
+
+    if (!isValid) {
+      input.nextElementSibling.textContent = error;
+      input.classList.add('form__item-input--error');
+
+      errors.push(validateInputField(input.value, input));
+      continue;
+    }
+
     form[input.name] = input.value;
-  });
 
-  console.log(form);
+    if (input.classList.contains('form__item-input--error')) {
+      input.classList.remove('form__item-input--error');
+      input.nextElementSibling.textContent = '';
+    }
+  }
+
+  if (formType === 'login') return { form, errors };
+
+  const hasPasswordErrors = errors.some((error) => error.name === 'passwordConfirm');
+  const isCorrectPassword = validateConfirmPassword(form.password, form.passwordConfirm);
+
+  if (!hasPasswordErrors && !isCorrectPassword) {
+    const passwordField = Array.from(inputs).find((input) => input.name === 'passwordConfirm');
+    const error = 'Passwords do not match';
+
+    passwordField.classList.add('form__item-input--error');
+    passwordField.nextElementSibling.textContent = error;
+
+    errors.push({ isValid: false, error });
+  }
+
+  return {
+    form,
+    errors,
+  };
 }
