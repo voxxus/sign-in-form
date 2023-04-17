@@ -28,7 +28,11 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ title: 'Register & Login UI Kit', template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      title: 'Register & Login UI Kit',
+      template: './src/index.html',
+      favicon: './public/favicon.ico',
+    }),
     new MiniCssExtractPlugin({ filename: 'css/main.css' }),
     new ESLintWebpackPlugin({ emitWarning: false, emitError: false }),
   ],
