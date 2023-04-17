@@ -1,6 +1,7 @@
-export function enableThemes() {
+export function enableThemes(selector) {
   const themes = {
     light: {
+      '--theme-switch': '#FFFFFF',
       '--form-background': '#FFFFFF',
       '--form-title': '#252EFF',
       '--input-border': '#6066FF',
@@ -14,6 +15,7 @@ export function enableThemes() {
     },
 
     dark: {
+      '--theme-switch': '#BB86FC',
       '--form-background': '#121212',
       '--form-title': '#FFFFFF',
       '--input-border': '#BB86FC',
@@ -43,5 +45,26 @@ export function enableThemes() {
     },
   };
 
-  document.themes = themes;
+  const switcher = document.createElement('label');
+  switcher.classList.add('switch');
+
+  switcher.innerHTML =
+    `<input type="checkbox" class="switch__input">
+    <span class="switch__toggler"></span>
+    <span class="switch__name">Dark mode</span>`;
+
+  switcher.addEventListener('click', () => {
+    const checkbox = switcher.querySelector('.switch__input');
+    checkbox.checked = !checkbox.checked;
+
+    if (checkbox.checked) {
+      switcher.querySelector('.switch__toggler').classList.add('switch__toggler--enabled');
+      themes.setDarkMode();
+    } else {
+      switcher.querySelector('.switch__toggler').classList.remove('switch__toggler--enabled');
+      themes.setLightMode();
+    }
+  });
+
+  document.querySelector(selector).insertAdjacentElement('afterbegin', switcher);
 }

@@ -1,0 +1,51 @@
+.switch {
+  width: 400px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  transition: 0.3s all ease;
+}
+
+@media (max-width: 575px) {
+  .switch {
+    width: 300px;
+  }
+}
+
+.switch__input {
+  appearance: none;
+}
+
+.switch__toggler {
+  height: 25px;
+  width: 60px;
+
+  position: relative;
+  display: block;
+  border-radius: 20px;
+
+  background-color: var(--theme-switch);
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.switch__toggler::before {
+  content: '';
+  display: block;
+  position: absolute;
+
+  height: 25px;
+  width: 25px;
+  left: -1px;
+
+  border-radius: 100%;
+  background-color: #8B54FF;
+
+  transition: 0.3s all ease;
+}
+
+.switch__toggler--enabled::before {
+  left: 36px;
+}

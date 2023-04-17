@@ -76,7 +76,7 @@ export function renderRegisterForm() {
   form.querySelector('.form__button--sign-in').addEventListener('click', () => {
     const app = document.querySelector('#app');
 
-    app.innerHTML = '';
+    app.removeChild(form);
 
     app.appendChild(renderLoginForm());
   });

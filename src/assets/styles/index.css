@@ -1,8 +1,10 @@
 @import url("@/assets/styles/base/reset.css");
 @import url("@/assets/styles/base/fonts.css");
 @import url("@/assets/styles/ui/form.css");
+@import url("@/assets/styles/ui/switch.css");
 
 :root {
+  --theme-switch: #FFFFFF;
   --form-background: #FFFFFF;
   --form-title: #252EFF;
   --input-border: #6066FF;
@@ -26,6 +28,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 10px;
 
   background-color: #e0e0e0;
 }

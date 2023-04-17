@@ -10,6 +10,14 @@
   align-items: center;
 
   background-color: var(--form-background);
+
+  transition: 0.3s all ease;;
+}
+
+@media (max-width: 575px) {
+  .form {
+    width: 300px;
+  }
 }
 
 .form--login {

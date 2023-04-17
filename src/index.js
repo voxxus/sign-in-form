@@ -5,4 +5,4 @@ import '@/assets/styles/index.css';
 
 startApp('#app');
 
-enableThemes();
+enableThemes('#app');
