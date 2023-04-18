@@ -5,7 +5,7 @@
   align-items: center;
   gap: 5px;
 
-  transition: 0.3s all ease;
+  transition: var(--transition-ease);
 }
 
 @media (max-width: 575px) {
@@ -28,7 +28,7 @@
 
   background-color: var(--theme-switch);
   cursor: pointer;
-  transition: 0.3s all ease;
+  transition: var(--transition-ease);
 }
 
 .switch__toggler::before {
@@ -43,7 +43,7 @@
   border-radius: 100%;
   background-color: #8B54FF;
 
-  transition: 0.3s all ease;
+  transition: var(--transition-ease);
 }
 
 .switch__toggler--enabled::before {

@@ -1,5 +1,5 @@
 .form {
-  width: 400px;
+  width: 300px;
 
   padding: 36px 24px 26px;
   border-radius: 10px;
@@ -11,12 +11,12 @@
 
   background-color: var(--form-background);
 
-  transition: 0.3s all ease;;
+  transition: var(--transition-ease);
 }
 
-@media (max-width: 575px) {
+@media (min-width: 576px) {
   .form {
-    width: 300px;
+    width: 400px;
   }
 }
 
@@ -66,7 +66,7 @@
   background-color: var(--form-background);
 
   outline: none;
-  transition: 0.3s all ease;
+  transition: var(--transition-ease);
 }
 
 .form__item-input:focus {
@@ -126,7 +126,7 @@
 
   cursor: pointer;
   outline: none;
-  transition: 0.3s all ease;
+  transition: var(--transition-ease);
 }
 
 .form__button:hover {

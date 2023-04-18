@@ -16,6 +16,7 @@
   --login-button: #252EFF;
   --register-button: #8B54FF;
   --sign-in-button: #6066FF;
+  --transition-ease: 0.3s all ease;
 }
 
 body {
